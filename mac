@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Congrats on your new Mac! Let's get you setup, Rob"
+echo "Congrats on your new Mac! Let's get you setup, Ben"
 
 echo "***********************"
 echo "*   Installing Brew   *"
@@ -77,13 +77,13 @@ echo "************************"
 echo "*   Setup Dotfiles     *"
 echo "************************"
 if [ ! -d ~/dotfiles ]; then
-  git clone https://github.com/robtarr/dotfiles.git ~/dotfiles
+  git clone https://github.com/bengoshow/dotfiles.git ~/dotfiles
 fi
 
 cd ~/dotfiles
 
-mkdir -p "~/Users/robtarr/Dropbox (Personal)/xbar/"
-ln -sf "$PWD/dotfiles" "~/Users/robtarr/Dropbox (Personal)/xbar/plugins"
+mkdir -p "~/Users/bengoshow/Dropbox (Personal)/xbar/"
+ln -sf "$PWD/dotfiles" "~/Users/bengoshow/Dropbox (Personal)/xbar/plugins"
 
 for link in .gitconfig .gitignore .gitmessage.txt .zshrc; do
   if [ -L "$HOME/$link" ]; then
