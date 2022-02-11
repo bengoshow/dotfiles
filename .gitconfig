@@ -1,11 +1,11 @@
 [user]
-  name = Rob Tarr
-  email = Rob@robtarr.net
-  signingkey = Rob Tarr <rob@robtarr.net>
+  name = Ben Goshow
+  email = goshow@heysparkbox.com
+  signingkey = Ben Goshow <goshow@heysparkbox.com>
 
 [commit]
   gpgsign = true
-  template = /Users/robtarr/dotfiles/git/default-commit-message.txt
+  template = /Users/bengoshow/dotfiles/git/default-commit-message.txt
 
 [push]
   default = simple
@@ -15,7 +15,7 @@
   showUntrackedFiles = all
 
 [github]
-  user = robtarr
+  user = bengoshow
 [mergetool "Kaleidoscope"]
 	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 	trustexitcode = true
@@ -34,16 +34,16 @@
   mergeoptions = --ff-only
 [core]
 	editor = code --wait
-	hooksPath = /Users/robtarr/dotfiles/globalGitHooks
+	hooksPath = /Users/bengoshow/dotfiles/globalGitHooks
 	excludesfile = ~/.gitignore
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 [secrets]
-	providers = /Users/robtarr/projects/secrets/provider.js
+	providers = /Users/bengoshow/projects/secrets/provider.js
 [pull]
 	rebase = true
 [init]
-	templateDir = /Users/robtarr/.git-template
+	templateDir = /Users/bengoshow/.git-template
 	defaultBranch = main
 [filter "lfs"]
 	required = true
