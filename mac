@@ -23,7 +23,7 @@ brew install \
   vim \
   pure \
   composer \
-  ddev
+  drud/ddev/ddev
 
 echo "***************************"
 echo "*   Installing Heroku CLI *"
