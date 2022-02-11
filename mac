@@ -21,7 +21,9 @@ brew install \
   nvm \
   shellcheck \
   vim \
-  pure
+  pure \
+  composer \
+  ddev
 
 echo "***************************"
 echo "*   Installing Heroku CLI *"
@@ -54,17 +56,11 @@ brew install --cask \
   iterm2 \
   docker \
   visual-studio-code \
-  sublime-text \
   kaleidoscope \
   gpg-suite-no-mail \
   \
-  tweetbot \
-  spotify \
-  autodesk-fusion360 \
-  ultimaker-cura \
-  skitch \
-  dozer
-
+  spotify
+  
 brew tap homebrew/cask-fonts
 brew install --cask font-fira-code
 
