@@ -1,54 +1,13 @@
+[secrets]
+	providers = /Users/bengoshow/secrets/provider.js
+[init]
+	templatedir = ~/.git-template
 [user]
-  name = Ben Goshow
-  email = goshow@heysparkbox.com
-  signingkey = Ben Goshow <goshow@heysparkbox.com>
-
+	name = Ben Goshow
+	signingkey = 2BE01833
+	email = goshow@heysparkbox.com
 [commit]
-  gpgsign = true
-  template = /Users/bengoshow/dotfiles/git/default-commit-message.txt
-
-[push]
-  default = simple
-  followTags = true
-
-[status]
-  showUntrackedFiles = all
-
-[github]
-  user = bengoshow
-[mergetool "Kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustexitcode = true
-[merge]
-	tool = Kaleidoscope
-[difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-[difftool]
-	prompt = false
-[mergetool]
-	prompt = false
-[diff]
-	tool = Kaleidoscope
-
-[branch "master"]
-  mergeoptions = --ff-only
+	gpgsign = true
+	template = /Users/bengoshow/.gitmessage.txt
 [core]
 	editor = code --wait
-	hooksPath = /Users/bengoshow/dotfiles/globalGitHooks
-	excludesfile = ~/.gitignore
-[alias]
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
-[secrets]
-	providers = /Users/bengoshow/projects/secrets/provider.js
-[pull]
-	rebase = true
-[init]
-	templateDir = /Users/bengoshow/.git-template
-	defaultBranch = main
-[filter "lfs"]
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-[gpg]
-	program = /usr/local/MacGPG2/bin/gpg2
