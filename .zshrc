@@ -110,7 +110,6 @@ alias ppp="ddev pull pantheon"
 alias pps="ddev pull pantheon --skip-files -y"
 alias ddd="ddev drush deploy"
 alias dcr="ddev drush cr"
-alias uli="ddev drush uli"
 alias dwd="ddev drush wd-tail --extended"
 alias deb="ddev drush eb"
 alias dib="ddev drush ib --choice='safe'"
@@ -118,7 +117,61 @@ alias dea="ddev drush ea"
 alias dia="ddev drush ia --choice='safe'"
 alias cex="ddev drush cex"
 alias cim="ddev drush cim"
+alias dxe="ddev xdebug enable"
+alias dxo="ddev xdebug off"
+alias gmf="git merge --ff-only"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+DOMAIN=''
+
+function uli() {
+  case ${1} in
+
+    baxter)
+      DOMAIN='https://baxter-itw-corp.ddev.site'
+      ;;
+
+    hobart)
+      DOMAIN='https://hobart-itw-corp.ddev.site'
+      ;;
+
+    service)
+      DOMAIN='https://hobart-service-itw-corp.ddev.site'
+      ;;
+
+    gaylord)
+      DOMAIN='https://gaylord-itw-corp.ddev.site'
+      ;;
+
+    traulsen)
+      DOMAIN='https://traulsen-itw-corp.ddev.site'
+      ;;
+
+    itw)
+      DOMAIN='https://itw-food-equipment-itw-corp.ddev.site'
+      ;;
+
+    centerline)
+      DOMAIN='https://centerline-itw-corp.ddev.site'
+      ;;
+
+    dev)
+      terminus -n drush itw-corp.dev uli
+      return
+      ;;
+
+    *)
+      if [[ $1 =~ '^[0-9]+$' ]]; then
+        terminus -n drush itw-corp.pr-$1 uli
+        return
+      fi
+      ;;
+
+  esac
+
+  ddev drush uli -l ${DOMAIN}
+
+}
